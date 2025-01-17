@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:madmon/app_root.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:madmon/core/theming/colors_manager.dart';
 
 import '../../../../core/assets/assets_manager.dart';
@@ -47,7 +47,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             const Spacer(),
             Padding(
               padding: REdgeInsets.symmetric(horizontal: 28),
-              child: SvgPicture.asset(AssetsManager.notificationsVector),
+              child: Stack(
+                children: [
+                  SvgPicture.asset(AssetsManager.notificationsVector),
+                  Container(
+                    width: 8,
+                    height: 8,
+                    decoration: const BoxDecoration(
+                      color: ColorsManager.red,
+                      shape: BoxShape.circle,
+                    ),
+                  )
+                ],
+              ),
             ),
           ],
         ),
