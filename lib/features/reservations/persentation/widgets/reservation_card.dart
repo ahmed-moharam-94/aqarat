@@ -45,7 +45,7 @@ class _ReservationCardState extends State<ReservationCard> {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       curve: Curves.linear,
-      height: _showMoreInfo? 4900.h : 230.h,
+      height: _showMoreInfo? 480.h : 220.h,
       margin: const EdgeInsets.symmetric(vertical: 11),
       decoration: BoxDecoration(
         color: ColorsManager.white,
@@ -93,7 +93,7 @@ class _ReservationCardState extends State<ReservationCard> {
                   ],
                 ),
 
-              GestureDetector(
+              InkWell(
                 onTap: () => _changeShowMoreInfoValue(!_showMoreInfo),
                 child: Center(
                   child: Icon(
